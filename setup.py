@@ -9,8 +9,8 @@ setup(name='monzo',
       license='MIT',
       packages=['monzo'],
       install_requires=[
-          'requests==2.20.0',
-          'requests-oauthlib==1.0.0',
-          'python-dotenv==0.5.1'
+          'requests==2.28.1',
+          'requests-oauthlib==1.3.1',
+          'python-dotenv==0.21.0'
       ],
       )
