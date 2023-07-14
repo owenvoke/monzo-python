@@ -1,4 +1,4 @@
-from monzo.monzo import Monzo
+from monzo import Monzo
 from monzo.errors import BadRequestError
 import pytest
 

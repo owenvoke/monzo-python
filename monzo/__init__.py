@@ -1,2 +1,2 @@
-from monzo.monzo import Monzo
-from monzo.auth import MonzoOAuth2Client
+from .monzo import Monzo
+from .auth import MonzoOAuth2Client

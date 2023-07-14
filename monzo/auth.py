@@ -4,7 +4,6 @@ Adapted from the implementation for a Fitbit API Python client by Orcas, Inc.
 and used under the Apache2 license: https://www.apache.org/licenses/LICENSE-2.0
 
 Original code may be found at: https://github.com/orcasgit/python-fitbit
-
 """
 
 from requests.auth import HTTPBasicAuth
@@ -18,7 +17,7 @@ from monzo.errors import (
     ForbiddenError,
     MethodNotAllowedError,
     PageNotFoundError,
-    NotAcceptibleError,
+    NotAcceptableError,
     TooManyRequestsError,
     InternalServerError,
     GatewayTimeoutError,
@@ -92,11 +91,11 @@ class MonzoOAuth2Client(object):
     @classmethod
     def from_json(cls, filename=MONZO_CACHE_FILE, refresh_callback=save_token_to_file):
         """Loads a MonzoOAuth2Client object from a json representation of the
-           client credentials and token from a file.
+        client credentials and token from a file.
 
-           :param filename: Path to file from which to load information
-           :param refresh_callback: Callback function for when access token is refreshed
-           :rtype: MonzoOAuth2Client object as defined in loaded file
+        :param filename: Path to file from which to load information
+        :param refresh_callback: Callback function for when access token is refreshed
+        :rtype: MonzoOAuth2Client object as defined in loaded file
         """
         token = load_token_from_file(filename)
         client_id = token.get(CLIENT_ID)
@@ -196,12 +195,13 @@ class MonzoOAuth2Client(object):
 
         return token
 
-    def validate_response(self, response):
+    @staticmethod
+    def validate_response(response):
         """Validate the response and raises any appropriate errors.
-           https://docs.monzo.com/#errors
+        https://docs.monzo.com/#errors
 
-           :param response: The response to validate
-           :rtype: A Dictionary representation of the response, if no errors occured.
+        :param response: The response to validate
+        :rtype: A Dictionary representation of the response, if no errors occured.
         """
         json_response = response.json()
         if response.status_code == 200:
@@ -217,7 +217,7 @@ class MonzoOAuth2Client(object):
         if response.status_code == 405:
             raise MethodNotAllowedError(json_response["message"])
         if response.status_code == 406:
-            raise NotAcceptibleError(json_response["message"])
+            raise NotAcceptableError(json_response["message"])
         if response.status_code == 429:
             raise TooManyRequestsError(json_response["message"])
         if response.status_code == 500:
