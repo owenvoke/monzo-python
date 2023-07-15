@@ -10,9 +10,7 @@ Make sure you have Python and pip on your machine
 
 To install the package run
 
-`pip install git+https://github.com/owenvoke/monzo-python`
-
-If the above does not work, you may want to run the above command as an admin by prefixing `sudo`.
+`pip install git+https://github.com/owenvoke/monzo-python-sdk`
 
 ### Example
 

@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="monzo",
-    version="0.11.1",
+    version="0.11.2",
     description="A python SDK for interacting with the Monzo API.",
     url="https://github.com/owenvoke/monzo-python",
     author="Owen Voke",

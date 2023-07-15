@@ -39,7 +39,7 @@ exclude = [
 ]
 
 [tool.hatch.build.targets.wheel]
-packages = ["ohdear"]
+packages = ["monzo"]
 
 [tool.hatch.envs.default]
 dependencies = [
